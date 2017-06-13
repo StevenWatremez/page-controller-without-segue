@@ -37,7 +37,4 @@ class DataViewController: UIViewController {
     super.viewWillAppear(animated)
     self.dataLabel.text = dataObject?.title
   }
-
-
 }
-
