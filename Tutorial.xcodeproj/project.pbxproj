@@ -8,24 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		6DB232281EF0774200A8A287 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB232271EF0774200A8A287 /* AppDelegate.swift */; };
-		6DB2322A1EF0774200A8A287 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB232291EF0774200A8A287 /* RootViewController.swift */; };
+		6DB2322A1EF0774200A8A287 /* PagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB232291EF0774200A8A287 /* PagerViewController.swift */; };
 		6DB2322C1EF0774200A8A287 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB2322B1EF0774200A8A287 /* DataViewController.swift */; };
 		6DB2322E1EF0774200A8A287 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB2322D1EF0774200A8A287 /* ModelController.swift */; };
 		6DB232311EF0774200A8A287 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DB2322F1EF0774200A8A287 /* Main.storyboard */; };
 		6DB232331EF0774200A8A287 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DB232321EF0774200A8A287 /* Assets.xcassets */; };
 		6DB232361EF0774200A8A287 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DB232341EF0774200A8A287 /* LaunchScreen.storyboard */; };
+		6DF926F31EF082E700574730 /* Collection+safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF926F21EF082E700574730 /* Collection+safe.swift */; };
+		6DF926F51EF0868000574730 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF926F41EF0868000574730 /* ContainerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6DB232241EF0774200A8A287 /* Tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DB232271EF0774200A8A287 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6DB232291EF0774200A8A287 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		6DB232291EF0774200A8A287 /* PagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerViewController.swift; sourceTree = "<group>"; };
 		6DB2322B1EF0774200A8A287 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		6DB2322D1EF0774200A8A287 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		6DB232301EF0774200A8A287 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6DB232321EF0774200A8A287 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6DB232351EF0774200A8A287 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6DB232371EF0774200A8A287 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6DF926F21EF082E700574730 /* Collection+safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+safe.swift"; sourceTree = "<group>"; };
+		6DF926F41EF0868000574730 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,13 +63,15 @@
 			isa = PBXGroup;
 			children = (
 				6DB232271EF0774200A8A287 /* AppDelegate.swift */,
-				6DB232291EF0774200A8A287 /* RootViewController.swift */,
+				6DF926F41EF0868000574730 /* ContainerViewController.swift */,
+				6DB232291EF0774200A8A287 /* PagerViewController.swift */,
 				6DB2322B1EF0774200A8A287 /* DataViewController.swift */,
 				6DB2322D1EF0774200A8A287 /* ModelController.swift */,
 				6DB2322F1EF0774200A8A287 /* Main.storyboard */,
 				6DB232321EF0774200A8A287 /* Assets.xcassets */,
 				6DB232341EF0774200A8A287 /* LaunchScreen.storyboard */,
 				6DB232371EF0774200A8A287 /* Info.plist */,
+				6DF926F21EF082E700574730 /* Collection+safe.swift */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
@@ -141,9 +147,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DB2322A1EF0774200A8A287 /* RootViewController.swift in Sources */,
+				6DB2322A1EF0774200A8A287 /* PagerViewController.swift in Sources */,
+				6DF926F31EF082E700574730 /* Collection+safe.swift in Sources */,
 				6DB2322E1EF0774200A8A287 /* ModelController.swift in Sources */,
 				6DB2322C1EF0774200A8A287 /* DataViewController.swift in Sources */,
+				6DF926F51EF0868000574730 /* ContainerViewController.swift in Sources */,
 				6DB232281EF0774200A8A287 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,6 +287,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = C8NWXKTJBC;
 				INFOPLIST_FILE = Tutorial/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.watremez.Tutorial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -293,6 +302,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = C8NWXKTJBC;
 				INFOPLIST_FILE = Tutorial/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.watremez.Tutorial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -320,6 +330,7 @@
 				6DB2323C1EF0774200A8A287 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

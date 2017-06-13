@@ -8,11 +8,20 @@
 
 import UIKit
 
+struct DataModel {
+  let title: String
+}
+
+extension DataModel: Equatable {
+  static func ==(lhs: DataModel, rhs: DataModel) -> Bool {
+    return lhs.title == rhs.title
+  }
+}
+
 class DataViewController: UIViewController {
 
   @IBOutlet weak var dataLabel: UILabel!
-  var dataObject: String = ""
-
+  var dataObject: DataModel?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -26,7 +35,7 @@ class DataViewController: UIViewController {
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    self.dataLabel!.text = dataObject
+    self.dataLabel.text = dataObject?.title
   }
 
 
