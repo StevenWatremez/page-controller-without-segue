@@ -18,32 +18,22 @@ class ContainerViewController: UIViewController {
   }
   
   private func setupSubviews() {
-    if let rootViewController = storyboard?.instantiateViewController(withIdentifier: "PagerViewController") as? PagerViewController {
+    if let rootVC = storyboard?.instantiateViewController(withIdentifier: "PagerViewController") as? PagerViewController {
       
-      rootViewController.modelController = self.prepareModelController()
-      rootViewController.delegate = self
+      rootVC.modelController = DateModelFactory.fakeModel()
+      rootVC.delegate = self
       
-      addChildViewController(rootViewController)
-      self.containerView.addSubview(rootViewController.view)
+      addChildViewController(rootVC)
+      self.containerView.addSubview(rootVC.view)
       
-      rootViewController.view.frame = containerView.frame
-      rootViewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-      rootViewController.didMove(toParentViewController: self)
+      rootVC.view.frame = containerView.frame
+      rootVC.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+      rootVC.didMove(toParentViewController: self)
     }
-  }
-  
-  private func prepareModelController() -> ModelController {
-    let modelController = ModelController()
-    let firstDatamodel = DataModel(title: "page 1")
-    let secondDatamodel = DataModel(title: "page 2")
-    let thirdDatamodel = DataModel(title: "page 3")
-    modelController.pageData = [firstDatamodel, secondDatamodel,thirdDatamodel]
-    return modelController
   }
 }
 
 extension ContainerViewController: TutorialPageViewControllerDelegate {
-  
   func tutorialPageViewController(didUpdatePageCount count: Int) {
     pageControl.numberOfPages = count
   }

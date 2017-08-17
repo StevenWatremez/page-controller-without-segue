@@ -22,9 +22,8 @@ class ModelController: NSObject {
     self.delegate?.tutorialPageViewController(didUpdatePageCount: pageData.count)
   }
   
+  /// Return the data view controller for the given index.
   func viewControllerAtIndex(_ index: Int, storyboard: UIStoryboard?) -> DataViewController? {
-    // Return the data view controller for the given index.
-    self.delegate?.tutorialPageViewController(didUpdatePageIndex: index)
     if (self.pageData.count == 0) || (index >= self.pageData.count) {
       return nil
     }
@@ -63,6 +62,7 @@ extension ModelController: UIPageViewControllerDataSource {
   
   private func returnViewController(viewController: UIViewController, condition: (_ index: Int) -> Bool, after: Bool) -> UIViewController? {
     var index = self.index(of: viewController as? DataViewController)
+    self.delegate?.tutorialPageViewController(didUpdatePageIndex: index)
     if condition(index) { return nil }
     index = after ? index + 1 : index - 1
     return self.viewControllerAtIndex(index, storyboard: viewController.storyboard)

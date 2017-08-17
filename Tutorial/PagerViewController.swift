@@ -10,7 +10,7 @@ import UIKit
 
 class PagerViewController: UIViewController {
 
-  var pageViewController: UIPageViewController?
+  var pageVC: UIPageViewController?
   weak var delegate: TutorialPageViewControllerDelegate?
   
   override func viewDidLoad() {
@@ -28,13 +28,13 @@ class PagerViewController: UIViewController {
   
   // Configure the page view controller and add it as a child view controller.
   private func setupPageViewController() {
-    self.pageViewController = UIPageViewController(transitionStyle: .scroll,
+    self.pageVC = UIPageViewController(transitionStyle: .scroll,
                                                    navigationOrientation: .horizontal,
                                                    options: nil)
-    self.pageViewController?.dataSource = self.modelController
+    self.pageVC?.dataSource = self.modelController
     self.modelController?.delegate = self
     self.modelController?.numebrOfController()
-    if let pageViewController = self.pageViewController {
+    if let pageViewController = self.pageVC {
       self.addChildViewController(pageViewController)
       self.view.addSubview(pageViewController.view)
     }
@@ -44,7 +44,7 @@ class PagerViewController: UIViewController {
     if let storyboard = self.storyboard,
       let startingViewController = self.modelController?.viewControllerAtIndex(0, storyboard: storyboard) {
       let viewControllers = [startingViewController]
-      self.pageViewController?.setViewControllers(viewControllers,
+      self.pageVC?.setViewControllers(viewControllers,
                                                   direction: .forward,
                                                   animated: false,
                                                   completion: {done in })
@@ -58,8 +58,8 @@ class PagerViewController: UIViewController {
     if UIDevice.current.userInterfaceIdiom == .pad {
       pageViewRect = pageViewRect.insetBy(dx: 40.0, dy: 40.0)
     }
-    self.pageViewController?.view.frame = pageViewRect
-    self.pageViewController?.didMove(toParentViewController: self)
+    self.pageVC?.view.frame = pageViewRect
+    self.pageVC?.didMove(toParentViewController: self)
   }
 }
 
