@@ -1,10 +1,7 @@
 # Page Controller Without Segue
 This repo is here to show you how to create simple app tutorial with easy to maintain architecture. 
 
-<video width="320" height="480" autoplay loop>
-  <source src="giphy.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
+![pager controller giph](https://media.giphy.com/media/kDLb3Lug8DN3W/giphy.gif)
 
 To use it, you just need to copy files inside the project and paste into your project.
 
