@@ -38,8 +38,7 @@ class ModelController: NSObject {
     return dataViewController
   }
   
-  // Return the index of the given data view controller.
-  // For simplicity, this implementation uses a static array of model objects and the view controller stores the model object; you can therefore use the model object to identify the index.
+  /// Return the index of the given data view controller.
   private func index(of viewController: DataViewController?) -> Int {
     guard let dataObject = viewController?.dataObject else { return NSNotFound }
     return pageData.index(of: dataObject) ?? NSNotFound

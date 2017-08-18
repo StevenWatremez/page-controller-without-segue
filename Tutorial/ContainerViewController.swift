@@ -21,15 +21,25 @@ class ContainerViewController: UIViewController {
     if let rootVC = storyboard?.instantiateViewController(withIdentifier: "PagerViewController") as? PagerViewController {
       
       rootVC.modelController = DateModelFactory.fakeModel()
-      rootVC.delegate = self
+      rootVC.viewControllerDelegate = self
       
       addChildViewController(rootVC)
       self.containerView.addSubview(rootVC.view)
-      
-      rootVC.view.frame = containerView.frame
+
+      rootVC.view.frame = self.pagerBounds()
       rootVC.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
       rootVC.didMove(toParentViewController: self)
     }
+  }
+
+  // Set the page view controller's bounds using an inset rect
+  // so that self's view is visible around the edges of the pages.
+  private func pagerBounds() -> CGRect {
+    var pageViewRect = self.containerView.frame
+    if UIDevice.current.userInterfaceIdiom == .pad {
+      pageViewRect = pageViewRect.insetBy(dx: 40.0, dy: 40.0)
+    }
+    return pageViewRect
   }
 }
 

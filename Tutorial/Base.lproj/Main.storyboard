@@ -10,22 +10,12 @@
     </dependencies>
     <scenes>
         <!--Pager View Controller-->
-        <scene sceneID="clB-vc-fyl">
+        <scene sceneID="sPO-sU-p76">
             <objects>
-                <viewController restorationIdentifier="PagerViewController" storyboardIdentifier="PagerViewController" id="703-4V-yAM" customClass="PagerViewController" customModule="Tutorial" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="I7W-xW-C47"/>
-                        <viewControllerLayoutGuide type="bottom" id="IfR-02-kHw"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="502-Ir-ELC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Q3h-pU-vEd" sceneMemberID="firstResponder"/>
+                <pageViewController restorationIdentifier="PagerViewController" storyboardIdentifier="PagerViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="3k3-tM-AW6" customClass="PagerViewController" customModule="Tutorial" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VMa-cN-A9p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-101.59999999999999" y="-243.32833583208398"/>
+            <point key="canvasLocation" x="-236" y="-243"/>
         </scene>
         <!--Data View Controller-->
         <scene sceneID="snT-py-3hH">
@@ -67,7 +57,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GmD-Rr-ZGN" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="597" y="-243"/>
+            <point key="canvasLocation" x="455" y="-243"/>
         </scene>
         <!--Container View Controller-->
         <scene sceneID="kFg-FF-BrP">
@@ -90,7 +80,7 @@
                                 <color key="currentPageIndicatorTintColor" red="0.26807326079999999" green="0.70468991989999996" blue="0.98743027449999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Bjv-yZ-O50" secondAttribute="bottom" id="HLO-CP-K85"/>
                             <constraint firstAttribute="bottom" secondItem="uI4-Ex-CaU" secondAttribute="bottom" constant="50" id="HsX-Mq-sgU"/>

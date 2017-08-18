@@ -8,10 +8,8 @@
 
 import UIKit
 
-class PagerViewController: UIViewController {
-
-  var pageVC: UIPageViewController?
-  weak var delegate: TutorialPageViewControllerDelegate?
+class PagerViewController: UIPageViewController {
+  weak var viewControllerDelegate: TutorialPageViewControllerDelegate?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -23,52 +21,33 @@ class PagerViewController: UIViewController {
   private func setupSubviews() {
     self.setupPageViewController()
     self.setupControllers()
-    self.setupPageControllerBounds()
   }
   
   // Configure the page view controller and add it as a child view controller.
   private func setupPageViewController() {
-    self.pageVC = UIPageViewController(transitionStyle: .scroll,
-                                                   navigationOrientation: .horizontal,
-                                                   options: nil)
-    self.pageVC?.dataSource = self.modelController
+    self.dataSource = self.modelController
     self.modelController?.delegate = self
     self.modelController?.numebrOfController()
-    if let pageViewController = self.pageVC {
-      self.addChildViewController(pageViewController)
-      self.view.addSubview(pageViewController.view)
-    }
   }
   
   private func setupControllers() {
     if let storyboard = self.storyboard,
       let startingViewController = self.modelController?.viewControllerAtIndex(0, storyboard: storyboard) {
       let viewControllers = [startingViewController]
-      self.pageVC?.setViewControllers(viewControllers,
+      self.setViewControllers(viewControllers,
                                                   direction: .forward,
                                                   animated: false,
                                                   completion: {done in })
     }
   }
-  
-  // Set the page view controller's bounds using an inset rect
-  // so that self's view is visible around the edges of the pages.
-  private func setupPageControllerBounds() {
-    var pageViewRect = self.view.bounds
-    if UIDevice.current.userInterfaceIdiom == .pad {
-      pageViewRect = pageViewRect.insetBy(dx: 40.0, dy: 40.0)
-    }
-    self.pageVC?.view.frame = pageViewRect
-    self.pageVC?.didMove(toParentViewController: self)
-  }
 }
 
 extension PagerViewController: TutorialPageViewControllerDelegate {
   func tutorialPageViewController(didUpdatePageCount count: Int) {
-    self.delegate?.tutorialPageViewController(didUpdatePageCount: count)
+    self.viewControllerDelegate?.tutorialPageViewController(didUpdatePageCount: count)
   }
   
   func tutorialPageViewController(didUpdatePageIndex index: Int) {
-    self.delegate?.tutorialPageViewController(didUpdatePageIndex: index)
+    self.viewControllerDelegate?.tutorialPageViewController(didUpdatePageIndex: index)
   }
 }
