@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6D8F05BD1F46542D00F43F89 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8F05BC1F46542D00F43F89 /* DataModel.swift */; };
 		6D8F05BF1F4654A400F43F89 /* DataModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8F05BE1F4654A400F43F89 /* DataModelFactory.swift */; };
+		6D8F05C11F46D92900F43F89 /* VCNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8F05C01F46D92900F43F89 /* VCNames.swift */; };
 		6DB232281EF0774200A8A287 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB232271EF0774200A8A287 /* AppDelegate.swift */; };
 		6DB2322A1EF0774200A8A287 /* PagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB232291EF0774200A8A287 /* PagerViewController.swift */; };
 		6DB2322C1EF0774200A8A287 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB2322B1EF0774200A8A287 /* DataViewController.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		6D8F05BC1F46542D00F43F89 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		6D8F05BE1F4654A400F43F89 /* DataModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModelFactory.swift; sourceTree = "<group>"; };
+		6D8F05C01F46D92900F43F89 /* VCNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCNames.swift; sourceTree = "<group>"; };
 		6DB232241EF0774200A8A287 /* Tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DB232271EF0774200A8A287 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DB232291EF0774200A8A287 /* PagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				6DB232341EF0774200A8A287 /* LaunchScreen.storyboard */,
 				6DB232371EF0774200A8A287 /* Info.plist */,
 				6DF926F21EF082E700574730 /* Collection+safe.swift */,
+				6D8F05C01F46D92900F43F89 /* VCNames.swift */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 				6D8F05BD1F46542D00F43F89 /* DataModel.swift in Sources */,
 				6DB2322A1EF0774200A8A287 /* PagerViewController.swift in Sources */,
 				6DF926F31EF082E700574730 /* Collection+safe.swift in Sources */,
+				6D8F05C11F46D92900F43F89 /* VCNames.swift in Sources */,
 				6DB2322E1EF0774200A8A287 /* ModelController.swift in Sources */,
 				6D8F05BF1F4654A400F43F89 /* DataModelFactory.swift in Sources */,
 				6DB2322C1EF0774200A8A287 /* DataViewController.swift in Sources */,

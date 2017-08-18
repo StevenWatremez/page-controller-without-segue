@@ -33,7 +33,7 @@ class ModelController: NSObject {
   
   // MARK: private funcs
   private func dataController(at index: Int, with storyboard: UIStoryboard?) -> DataViewController? {
-    let dataViewController = storyboard?.instantiateViewController(withIdentifier: "DataViewController") as? DataViewController
+    let dataViewController = storyboard?.instantiateViewController(withIdentifier: VCNames.dataVC) as? DataViewController
     dataViewController?.dataObject = self.pageData[safe: index]
     return dataViewController
   }

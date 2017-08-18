@@ -9,21 +9,21 @@
 import UIKit
 
 class PagerViewController: UIPageViewController {
+  
   weak var viewControllerDelegate: TutorialPageViewControllerDelegate?
+  var modelController: ModelController?
   
   override func viewDidLoad() {
     super.viewDidLoad()
     self.setupSubviews()
   }
 
-  var modelController: ModelController?
-  
   private func setupSubviews() {
     self.setupPageViewController()
     self.setupControllers()
   }
   
-  // Configure the page view controller and add it as a child view controller.
+  /// Configure the page view controller and add it as a child view controller.
   private func setupPageViewController() {
     self.dataSource = self.modelController
     self.modelController?.delegate = self
@@ -35,9 +35,9 @@ class PagerViewController: UIPageViewController {
       let startingViewController = self.modelController?.viewControllerAtIndex(0, storyboard: storyboard) {
       let viewControllers = [startingViewController]
       self.setViewControllers(viewControllers,
-                                                  direction: .forward,
-                                                  animated: false,
-                                                  completion: {done in })
+                              direction: .forward,
+                              animated: false,
+                              completion: {done in })
     }
   }
 }

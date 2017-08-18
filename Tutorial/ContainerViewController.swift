@@ -18,7 +18,8 @@ class ContainerViewController: UIViewController {
   }
   
   private func setupSubviews() {
-    if let rootVC = storyboard?.instantiateViewController(withIdentifier: "PagerViewController") as? PagerViewController {
+    
+    if let rootVC = storyboard?.instantiateViewController(withIdentifier: VCNames.pagerVC) as? PagerViewController {
       
       rootVC.modelController = DateModelFactory.fakeModel()
       rootVC.viewControllerDelegate = self
