@@ -13,7 +13,7 @@
 		6DB232281EF0774200A8A287 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB232271EF0774200A8A287 /* AppDelegate.swift */; };
 		6DB2322A1EF0774200A8A287 /* PagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB232291EF0774200A8A287 /* PagerViewController.swift */; };
 		6DB2322C1EF0774200A8A287 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB2322B1EF0774200A8A287 /* DataViewController.swift */; };
-		6DB2322E1EF0774200A8A287 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB2322D1EF0774200A8A287 /* ModelController.swift */; };
+		6DB2322E1EF0774200A8A287 /* PagerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB2322D1EF0774200A8A287 /* PagerAdapter.swift */; };
 		6DB232311EF0774200A8A287 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DB2322F1EF0774200A8A287 /* Main.storyboard */; };
 		6DB232331EF0774200A8A287 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DB232321EF0774200A8A287 /* Assets.xcassets */; };
 		6DB232361EF0774200A8A287 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DB232341EF0774200A8A287 /* LaunchScreen.storyboard */; };
@@ -29,7 +29,7 @@
 		6DB232271EF0774200A8A287 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DB232291EF0774200A8A287 /* PagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerViewController.swift; sourceTree = "<group>"; };
 		6DB2322B1EF0774200A8A287 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
-		6DB2322D1EF0774200A8A287 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
+		6DB2322D1EF0774200A8A287 /* PagerAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerAdapter.swift; sourceTree = "<group>"; };
 		6DB232301EF0774200A8A287 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6DB232321EF0774200A8A287 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6DB232351EF0774200A8A287 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -68,21 +68,37 @@
 		6DB232261EF0774200A8A287 /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
-				6DB232271EF0774200A8A287 /* AppDelegate.swift */,
 				6DF926F41EF0868000574730 /* ContainerViewController.swift */,
-				6DB232291EF0774200A8A287 /* PagerViewController.swift */,
-				6DB2322D1EF0774200A8A287 /* ModelController.swift */,
-				6DB2322B1EF0774200A8A287 /* DataViewController.swift */,
-				6D8F05BC1F46542D00F43F89 /* DataModel.swift */,
-				6D8F05BE1F4654A400F43F89 /* DataModelFactory.swift */,
+				91F4FDA926E9FCF4009C3353 /* Pager */,
+				6DB232271EF0774200A8A287 /* AppDelegate.swift */,
 				6DB2322F1EF0774200A8A287 /* Main.storyboard */,
 				6DB232321EF0774200A8A287 /* Assets.xcassets */,
 				6DB232341EF0774200A8A287 /* LaunchScreen.storyboard */,
 				6DB232371EF0774200A8A287 /* Info.plist */,
-				6DF926F21EF082E700574730 /* Collection+safe.swift */,
 				6D8F05C01F46D92900F43F89 /* VCNames.swift */,
+				6DF926F21EF082E700574730 /* Collection+safe.swift */,
 			);
 			path = Tutorial;
+			sourceTree = "<group>";
+		};
+		91F4FDA826E9FCD0009C3353 /* SubPage */ = {
+			isa = PBXGroup;
+			children = (
+				6DB2322B1EF0774200A8A287 /* DataViewController.swift */,
+				6D8F05BC1F46542D00F43F89 /* DataModel.swift */,
+				6D8F05BE1F4654A400F43F89 /* DataModelFactory.swift */,
+			);
+			path = SubPage;
+			sourceTree = "<group>";
+		};
+		91F4FDA926E9FCF4009C3353 /* Pager */ = {
+			isa = PBXGroup;
+			children = (
+				6DB232291EF0774200A8A287 /* PagerViewController.swift */,
+				6DB2322D1EF0774200A8A287 /* PagerAdapter.swift */,
+				91F4FDA826E9FCD0009C3353 /* SubPage */,
+			);
+			path = Pager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,11 +128,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = Niji;
 				TargetAttributes = {
 					6DB232231EF0774200A8A287 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 1250;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -161,7 +178,7 @@
 				6DB2322A1EF0774200A8A287 /* PagerViewController.swift in Sources */,
 				6DF926F31EF082E700574730 /* Collection+safe.swift in Sources */,
 				6D8F05C11F46D92900F43F89 /* VCNames.swift in Sources */,
-				6DB2322E1EF0774200A8A287 /* ModelController.swift in Sources */,
+				6DB2322E1EF0774200A8A287 /* PagerAdapter.swift in Sources */,
 				6D8F05BF1F4654A400F43F89 /* DataModelFactory.swift in Sources */,
 				6DB2322C1EF0774200A8A287 /* DataViewController.swift in Sources */,
 				6DF926F51EF0868000574730 /* ContainerViewController.swift in Sources */,
@@ -205,6 +222,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -212,8 +230,10 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -239,7 +259,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -263,6 +283,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -270,8 +291,10 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -291,7 +314,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -308,13 +331,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C8NWXKTJBC;
 				INFOPLIST_FILE = Tutorial/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.watremez.Tutorial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -327,12 +350,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C8NWXKTJBC;
 				INFOPLIST_FILE = Tutorial/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.watremez.Tutorial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

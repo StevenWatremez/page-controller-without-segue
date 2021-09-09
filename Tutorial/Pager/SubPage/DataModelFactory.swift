@@ -9,8 +9,8 @@
 import Foundation
 
 struct DateModelFactory {
-  static func fakeModel() -> ModelController {
-    let modelController = ModelController()
+  static func fakeModel() -> PagerAdapter {
+    let modelController = PagerAdapter()
     let firstDatamodel = DataModel(title: "page 1")
     let secondDatamodel = DataModel(title: "page 2")
     let thirdDatamodel = DataModel(title: "page 3")

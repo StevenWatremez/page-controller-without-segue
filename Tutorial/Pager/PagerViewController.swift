@@ -11,7 +11,7 @@ import UIKit
 class PagerViewController: UIPageViewController {
   
   weak var viewControllerDelegate: TutorialPageViewControllerDelegate?
-  var modelController: ModelController?
+  var modelController: PagerAdapter?
   
   override func viewDidLoad() {
     super.viewDidLoad()

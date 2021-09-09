@@ -24,12 +24,12 @@ class ContainerViewController: UIViewController {
       rootVC.modelController = DateModelFactory.fakeModel()
       rootVC.viewControllerDelegate = self
       
-      addChildViewController(rootVC)
+      addChild(rootVC)
       self.containerView.addSubview(rootVC.view)
 
       rootVC.view.frame = self.pagerBounds()
       rootVC.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-      rootVC.didMove(toParentViewController: self)
+      rootVC.didMove(toParent: self)
     }
   }
 

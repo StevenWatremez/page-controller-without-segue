@@ -1,5 +1,5 @@
 //
-//  ModelController.swift
+//  PagerAdapter.swift
 //  Tutorial
 //
 //  Created by Steven_WATREMEZ on 13/06/2017.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-protocol TutorialPageViewControllerDelegate: class {
+protocol TutorialPageViewControllerDelegate: AnyObject {
   func tutorialPageViewController(didUpdatePageCount count: Int)
   func tutorialPageViewController(didUpdatePageIndex index: Int)
 }
 
-class ModelController: NSObject {
+class PagerAdapter: NSObject {
   
   var pageData: [DataModel] = []
   weak var delegate: TutorialPageViewControllerDelegate?
@@ -41,22 +41,26 @@ class ModelController: NSObject {
   /// Return the index of the given data view controller.
   private func index(of viewController: DataViewController?) -> Int {
     guard let dataObject = viewController?.dataObject else { return NSNotFound }
-    return pageData.index(of: dataObject) ?? NSNotFound
+    return pageData.firstIndex(of: dataObject) ?? NSNotFound
   }
 }
 
-extension ModelController: UIPageViewControllerDataSource {
+extension PagerAdapter: UIPageViewControllerDataSource {
   // MARK: - Page View Controller Data Source
   func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-    return returnViewController(viewController: viewController,
-                                condition: { index in return (index == 0) || (index == NSNotFound) },
-                                after: false)
+    return returnViewController(
+      viewController: viewController,
+      condition: { index in return (index == 0) || (index == NSNotFound) },
+      after: false
+    )
   }
   
   func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-    return returnViewController(viewController: viewController,
-                                condition: { index in return (index == NSNotFound) },
-                                after: true)
+    return returnViewController(
+      viewController: viewController,
+      condition: { index in return (index == NSNotFound) },
+      after: true
+    )
   }
   
   private func returnViewController(viewController: UIViewController, condition: (_ index: Int) -> Bool, after: Bool) -> UIViewController? {
